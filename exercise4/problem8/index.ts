@@ -1,36 +1,40 @@
 class Calculator {
-    #result: number;
+    private result: number;
 
     constructor(initValue: number = 0) {
-        this.#result = initValue;
+        this.result = initValue;
     }
 
-    add(value: number): this {
-        this.#result += value;
+    add(num: number): Calculator {
+        this.result += num;
         return this;
     }
 
-    subtract(value: number): this {
-        this.#result -= value;
+    subtract(num: number): Calculator {
+        this.result -= num;
         return this;
     }
 
-    multiply(value: number): this {
-        this.#result *= value;
-        return this;
-    }
-
-    divide(value: number): this | string {
-        if (value === 0) {
-            return "Don't divide by zero!";
+    divide(num: number): Calculator | string {
+        if (num === 0) {
+            return "Cannot divide by zero.";
         }
-        this.#result /= value;
+        this.result /= num;
         return this;
     }
 
-    logResult(): this {
-        console.log(this.#result);
+    multiply(num: number): Calculator {
+        this.result *= num;
         return this;
+    }
+
+    logResult(): Calculator {
+        console.log(this.result);
+        return this;
+    }
+
+    getResult(): number {
+        return this.result;
     }
 }
 
