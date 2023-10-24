@@ -1,19 +1,30 @@
-// Update it as much as you want, just don't change the names
+export class BankAccount {
+  balance: number;
 
-export class BankAccount {}
+  constructor() {
+    this.balance = 0;
+  }
 
-export class FedexAccount {}
-
-export class KazPostAccount {}
-
-export function withdrawMoney(accounts, amount) {
-  for (const account of accounts) {
-    account.withdraw(amount);
+  withdraw(amount: number): number {
+    if (this.balance >= amount) {
+      this.balance -= amount;
+      return this.balance;
+    } else if (this.balance - amount < 100) {
+      return -1;
+    }
+    return this.balance;
   }
 }
 
-export function sendLetterTo(accounts, recipient) {
-  for (const account of accounts) {
-    account.sendMail(recipient);
+export class FedexAccount {
+  sendMail(recipient: string): void {
+    console.log(`Sending mail to ${recipient}`);
+  }
+
+  receiveMail(sender: string): void {
+    console.log(`Receiving mail from ${sender}`);
   }
 }
+
+export class KazPostAccount extends FedexAccount {
+  bankAccount
