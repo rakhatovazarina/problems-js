@@ -1,3 +1,9 @@
-function callbackExec() {}
+function callbackExec(callback) {
+  setTimeout(callback, 2000); 
+}
 
-export default callbackExec;
+function displayHello() {
+  console.log('Hello');
+}
+
+callbackExec(displayHello); 
