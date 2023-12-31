@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "moduleResolution": "bundler",
+      "target": "ESNext",
+      "module": "ESNext",
+
+      "verbatimModuleSyntax": true,
+      "isolatedModules": true,
+      "resolveJsonModule": true,
+  
+      "sourceMap": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      
+      "checkJs": true
+    },
+    
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.svelte"],
+    "exclude": ["node_modules/*", "public/*"]  }
